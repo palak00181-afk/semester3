@@ -1,0 +1,36 @@
+package practice.session_3;
+
+public class SeatingGridOptimizer {
+
+    // Private helper method to compute average of a single row
+    private static double rowAverage(int[] row) {
+        if (row == null || row.length == 0) {
+            return 0.0;
+        }
+        
+        double sum = 0;
+        for (int score : row) {
+            sum += score;
+        }
+        return sum / row.length;
+    }
+
+    // Main method to classify each row based on the threshold
+    public static String classifyRows(int[][] seatingScores, int threshold) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < seatingScores.length; i++) {
+            double avg = rowAverage(seatingScores[i]);
+            
+            String zone = (avg >= threshold) ? "Buzzing Zone" : "Quiet Zone";
+            
+            result.append("Row ").append(i).append(": ").append(zone);
+            
+            if (i < seatingScores.length - 1) {
+                result.append(" | ");
+            }
+        }
+
+        return result.toString();
+    }
+}
