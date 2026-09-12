@@ -17,6 +17,7 @@ public class PodiumFinder {
                 second = score;
             } else if (score > third) {
                 third = score;
+                System.out.print(scores);
             }
         }
 
