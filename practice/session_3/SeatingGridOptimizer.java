@@ -15,7 +15,7 @@ public class SeatingGridOptimizer {
         return sum / row.length;
     }
 
-    // Main method to classify each row based on the threshold
+
     public static String classifyRows(int[][] seatingScores, int threshold) {
         StringBuilder result = new StringBuilder();
 
